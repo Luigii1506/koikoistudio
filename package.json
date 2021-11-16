@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "EXPORT NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service serve",
-    "build": "EXPORT NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service build"
+    "serve": "vue-cli-service serve --openssl-legacy-provider",
+    "build": "vue-cli-service build --openssl-legacy-provider"
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
