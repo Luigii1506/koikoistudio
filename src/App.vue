@@ -1,7 +1,7 @@
 <template>
   <q-layout view="lHh Lpr lFf" class="mainWrapper">
-    <!--
-    <q-header elevated class="glossy">
+
+    <q-header elevated class="glossy navbar">
       <q-toolbar>
         <q-btn
           flat
@@ -10,22 +10,19 @@
           @click="leftDrawerOpen = !leftDrawerOpen"
           aria-label="Menu"
           icon="menu"
+          class="btn-navbar"
         />
-
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
+        <img src="../public/img/koikoi_logo_blanco.png" class="img-navbar">
       </q-toolbar>
     </q-header>
-    -->
-    <!--
+
+
     <q-drawer
       v-model="leftDrawerOpen"
       show-if-above
       bordered
       class="bg-grey-2"
+      behavior="mobile"
     >
       <q-list>
         <q-item-label header>Essential Links</q-item-label>
@@ -76,7 +73,6 @@
         </q-item>
       </q-list>
     </q-drawer>
-    -->
 
     <q-page-container>
       <div class="header">
@@ -92,7 +88,7 @@
       </div>
       <div class="row">
         <div class="col-12 col-md-4">
-            <img alt="Quasar logo" src="../public/img/inicio_card_1.png" style="width: 100%; height: 100%">
+            <img alt="Quasar logo" src="../public/img/inicio_card_1.png" style="width: 100%; height: 100%" class="test">
         </div>
          <div class="col-12 col-md-4">
             <img alt="Quasar logo" src="../public/img/inicio_card_2.png" style="width: 100%; height: 100%">
@@ -113,7 +109,7 @@
             <p class="third-section-text">services</p>
           </div>
           <div class="col-12 col-sm-4 col-xl-3">
-            <img alt="Quasar logo" src="../public/img/tooltip_2.png" class="third-section-small-img ">
+            <img alt="Quasar logo" src="../public/img/tooltip_2.png" class="third-section-small-img">
             <p class="third-section-text">Contact us via mail</p>
             <p class="third-section-text">Whatsapp or paloma</p>
           </div>
@@ -146,6 +142,7 @@
 </template>
 
 <script>
+import simpleParallax from 'simple-parallax-js';
 import { ref } from 'vue'
 //import HelloWorld from './components/HelloWorld.vue'
 
@@ -160,11 +157,29 @@ export default {
     return {
       leftDrawerOpen: ref(false)
     }
+  },
+  mounted() {
+    //var DescriptionSectionLeftChair = document.querySelectorAll(".test");
+    new simpleParallax(DescriptionSectionLeftChair, {
+      orientation: "left",
+      scale: 1.4,
+      overflow: true,
+      delay: 0.4,
+      transition: "linear",
+    });
   }
 }
 </script>
 
 <style scoped>
+
+.q-toolbar {
+  background-color: black;
+}
+
+.q-layout__section--marginal {
+  background-color: unset;
+}
 
 .header {
   position: relative;
@@ -294,6 +309,15 @@ export default {
 .footer-img {
   width: 100%;
 }
+
+.navbar {
+  display: none;
+}
+
+.header {
+  display: block;
+}
+
 /*
 .third-section-circulo-img {
   width: 90%;
@@ -302,6 +326,23 @@ export default {
   margin-top: 50px;
 }
 */
+
+/* Custom Components */
+
+.q-toolbar {
+  height: 65px;
+}
+
+.btn-navbar {
+  font-size: 25px;
+}
+
+.img-navbar {
+  width: 35px;
+  position: absolute;
+  right: 15px;
+}
+/* End Custom CSS */
 
 @media (max-width: 1800px) {
   .title-section-1 {
@@ -353,7 +394,28 @@ export default {
   }
 }
 
-@media (max-width: 500px) {
+
+@media (max-width: 600px) {
+
+  .navbar {
+    display: block;
+  }
+
+  .header {
+    display: none;
+  }
+
+  .third-section-title {
+    margin-bottom: 0px;
+  }
+
+  .third-section-big-img {
+    margin-top: 30px;
+  }
+
+  .third-section-small-img {
+    margin-top: 20px;
+  }
 
   .third-section-title {
     font-size: 60px;
@@ -384,7 +446,10 @@ export default {
   }
 
   .third-section-details-img {
-    max-width: 200px;
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+    max-width: unset;
   }
 }
 </style>
