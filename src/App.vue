@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="lHh Lpr lFf" class="mainWrapper">
+  <q-layout view="lHh Lpr lFf" class="mainWrapper" id="appLayout">
 
     <q-header elevated class="glossy navbar">
       <q-toolbar>
@@ -31,8 +31,8 @@
             <q-icon name="school" />
           </q-item-section>
           <q-item-section>
-            <q-item-label>Docs</q-item-label>
-            <q-item-label caption>quasar.dev</q-item-label>
+            <q-item-label>Us</q-item-label>
+            <!--<q-item-label caption>quasar.dev</q-item-label>-->
           </q-item-section>
         </q-item>
         <q-item clickable tag="a" target="_blank" href="https://github.com/quasarframework/">
@@ -40,8 +40,8 @@
             <q-icon name="code" />
           </q-item-section>
           <q-item-section>
-            <q-item-label>Github</q-item-label>
-            <q-item-label caption>github.com/quasarframework</q-item-label>
+            <q-item-label>Services</q-item-label>
+            <!--<q-item-label caption>github.com/quasarframework</q-item-label>-->
           </q-item-section>
         </q-item>
         <q-item clickable tag="a" target="_blank" href="https://chat.quasar.dev">
@@ -49,8 +49,8 @@
             <q-icon name="chat" />
           </q-item-section>
           <q-item-section>
-            <q-item-label>Discord Chat Channel</q-item-label>
-            <q-item-label caption>chat.quasar.dev</q-item-label>
+            <q-item-label>How to</q-item-label>
+            <!--<q-item-label caption>chat.quasar.dev</q-item-label>-->
           </q-item-section>
         </q-item>
         <q-item clickable tag="a" target="_blank" href="https://forum.quasar.dev">
@@ -58,8 +58,8 @@
             <q-icon name="forum" />
           </q-item-section>
           <q-item-section>
-            <q-item-label>Forum</q-item-label>
-            <q-item-label caption>forum.quasar.dev</q-item-label>
+            <q-item-label>Blog</q-item-label>
+            <!--<q-item-label caption>forum.quasar.dev</q-item-label>-->
           </q-item-section>
         </q-item>
         <q-item clickable tag="a" target="_blank" href="https://twitter.com/quasarframework">
@@ -67,8 +67,8 @@
             <q-icon name="rss_feed" />
           </q-item-section>
           <q-item-section>
-            <q-item-label>Twitter</q-item-label>
-            <q-item-label caption>@quasarframework</q-item-label>
+            <q-item-label>Contact</q-item-label>
+            <q-item-label caption>koikoi@studio.com</q-item-label>
           </q-item-section>
         </q-item>
       </q-list>
@@ -79,13 +79,15 @@
         <img alt="koikoi_logo" src="../public/img/koikoi_logo_blanco.png" class="logo">
       </div>
       <div class="first-section">
-        <div class="first-section-text-wrapper">
-          <p class="title-section-1">if they don't see you,</p>
-          <p class="title-section-1">it's because you haven't <span class="pink">seen us</span></p>
-          <p class="title-section-2">The creative studio you were looking for</p>
-        </div>  
-      
+        <transition name="slide-fade" mode="out-in">
+          <div class="first-section-text-wrapper" v-if="show">
+            <p class="title-section-1">if they don't see you,</p>
+            <p class="title-section-1">it's because you haven't <span class="pink">seen us</span></p>
+            <p class="title-section-2">The creative studio you were looking for</p>
+          </div>  
+        </transition>
       </div>
+
       <div class="row">
         <div class="col-12 col-md-4">
             <img alt="Quasar logo" src="../public/img/inicio_card_1.png" style="width: 100%; height: 100%" class="test">
@@ -100,7 +102,7 @@
       <div class="third-section">
         <div class="row row-third-section">
           <div class="col-12">
-            <p class="third-section-title">How?</p>
+            <div data-aos="fade-up"> <p class="third-section-title">How?</p></div>
           </div>
           <div class="col-12 col-sm-4 col-xl-3">
             <img alt="Quasar logo" src="../public/img/tooltip_1.png" class="third-section-small-img">
@@ -130,8 +132,22 @@
         </div>
         <div class="row third-section-circulo-img">
           <!--<img alt="Quasar logo" src="../public/img/circulo_color.png" class="third-section-circulo-img">-->
-          <img alt="Quasar logo" src="../public/img/postick_1.png" class="third-section-circulo-img-1">
-          <img alt="Quasar logo" src="../public/img/postick_2.png" class="third-section-circulo-img-2">
+          <div 
+            data-aos-offset="300"
+            data-aos="flip-up" 
+            class="animation-postick-1">
+            <img alt="Quasar logo" src="../public/img/postick_1.png" class="third-section-circulo-img-1">
+          </div>
+          <div 
+            data-aos-offset="300"
+            data-aos="flip-down" 
+            class="animation-postick-2">
+            <img alt="Quasar logo" src="../public/img/postick_2.png" class="third-section-circulo-img-2">
+            <div class="postick-text">
+              <p class="postick-text-1">Contact us</p>
+              <p class="postick-text-2">koikoi@studio.com</p>
+            </div>
+          </div>
         </div>
         <div class="footer">
           <img alt="Quasar logo" src="../public/img/footer.png" class="footer-img">
@@ -148,7 +164,11 @@ import { ref } from 'vue'
 
 export default {
   name: 'LayoutDefault',
-
+  data() {
+    return {
+       show: false
+    }
+  },
   components: {
    // HelloWorld
   },
@@ -159,7 +179,13 @@ export default {
     }
   },
   mounted() {
-    //var DescriptionSectionLeftChair = document.querySelectorAll(".test");
+    //let elemento = document.getElementById("appLayout");
+    //elemento.style.display = "block";
+    //console.log('asd', elemento);
+
+    window.addEventListener("load", this.onWindowLoad);
+    /*
+    var DescriptionSectionLeftChair = document.querySelectorAll(".test");
     new simpleParallax(DescriptionSectionLeftChair, {
       orientation: "left",
       scale: 1.4,
@@ -167,11 +193,40 @@ export default {
       delay: 0.4,
       transition: "linear",
     });
-  }
+    */
+  },
+  methods: {
+      onWindowLoad() {
+        let elemento = document.getElementById("appLayout");
+        elemento.style.display = "block";
+          setTimeout(() => {  this.show = true; }, 1000);
+        AOS.init();
+      },
+  },
 }
 </script>
 
 <style scoped>
+
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
+}
+
+#appLayout {
+  display: none;
+}
 
 .q-toolbar {
   background-color: black;
@@ -179,6 +234,29 @@ export default {
 
 .q-layout__section--marginal {
   background-color: unset;
+}
+
+.postick-text {
+  position: absolute;
+  bottom: calc(100vw * 140 / 1920);
+  right: calc(100vw * 80 / 1920);
+}
+
+.postick-text-1 {
+  color: #000000;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 100;
+  margin-bottom: 0px;
+  text-align: center;
+  font-size: calc(100vw * 46 / 1920);
+}
+
+.postick-text-2 {
+  color: #000000;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  font-size: calc(100vw * 46 / 1920);
 }
 
 .header {
@@ -249,14 +327,14 @@ export default {
 }
 .third-section-small-img {
   width: 200px;
-  height: 200px;    
+  height: auto;    
   margin: auto;
   display: block;
   margin-bottom: 20px;
 }
 .third-section-big-img {
   width: 300px;
-  height: 300px;    
+  height: auto;    
   margin: auto;
   display: block;
   margin-bottom: 30px;
@@ -265,6 +343,8 @@ export default {
   font-size: 41px;
   text-align: center;
   line-height: 41px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
 }
 .third-section-details-img {
   max-width: 450px;
@@ -281,7 +361,7 @@ export default {
   margin-bottom: 40px;
 }
 .third-section-circulo-img {
-  background-image: url('../public/img/circulo_color.png');
+  background-image: url('../public/img/circulo_color-min.png');
   background-repeat: no-repeat;
   background-size: 90%;
   min-height: calc(100vw * 1400 / 1920);
@@ -292,7 +372,16 @@ export default {
 
 .third-section-circulo-img-1 {
   width: calc(100vw * 440 / 1920);
+  height: 100%;
+  /*
   height: max-content;
+  position: absolute;
+  bottom: calc(100vw * 330 / 1920);
+  right: calc(100vw * 782 / 1920);
+  */
+}
+
+.animation-postick-1 {
   position: absolute;
   bottom: calc(100vw * 330 / 1920);
   right: calc(100vw * 782 / 1920);
@@ -300,7 +389,16 @@ export default {
 
 .third-section-circulo-img-2 {
   width: calc(100vw * 622 / 1920);
+  height: 100%;
+  /*
   height: max-content;
+  position: absolute;
+  bottom: calc(100vw * 90 / 1920);
+  right: calc(100vw * 100 / 1920);
+  */
+}
+
+.animation-postick-2 {
   position: absolute;
   bottom: calc(100vw * 90 / 1920);
   right: calc(100vw * 100 / 1920);
@@ -443,13 +541,49 @@ export default {
   .third-section-text {
     font-size: 25px;
     line-height: 25px;
+    margin-bottom: 0px;
+    line-height: 30px;
   }
 
   .third-section-details-img {
     width: 100%;
     padding-left: 30px;
     padding-right: 30px;
-    max-width: unset;
+    max-width: 255px;
   }
+
+  .third-section-circulo-img-2 {
+    width: calc(100vw * 1000 / 1920);
+
+  }
+
+  .animation-postick-2 {
+    position: absolute;
+    bottom: calc(100vw * 250 / 1920);
+    right: calc(100vw * 150 / 1920);
+  }
+
+  .postick-text {
+    bottom: calc(100vw * 250 / 1920);
+    right: calc(100vw * 150 / 1920);
+  }
+
+  .postick-text-1,
+  .postick-text-2 {
+    font-size: calc(100vw * 70 / 1920);
+  }
+
+  .animation-postick-1 {
+    display: none;
+  }
+
+  .third-section-small-img {
+    width: 160px;
+  }
+
+  .third-section-big-img {
+    width: 220px;
+  }
+
 }
 </style>
