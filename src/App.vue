@@ -78,11 +78,14 @@
       <div class="header">
         <img alt="koikoi_logo" src="../public/img/koikoi_logo_blanco.png" class="logo">
       </div>
-      <div class="title">GET TO KNOW <span class="pink">US</span></div>
-      <div class="text-wrapper">
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat</p>
-        <p> Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+      <div class="first-section">
+        <div class="title">GET TO KNOW <span class="pink">US</span></div>
+        <div class="text-wrapper">
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat</p>
+          <p> Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+        </div>    
       </div>
+      
     </q-page-container>
   </q-layout>
 </template>
@@ -173,29 +176,22 @@ export default {
 /* End Custom CSS */
 
 .title {
-  font-size: calc(100vw * 141 / 1938);
+  font-size: 141px;
   color: white;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
   font-weight: 900;
-  position: absolute;
-  left: 0px;
-  right: 0px;
-  top: calc(100vh * 403 / 1920);
-  margin: auto;
-  line-height: calc(100vw * 141 / 1938);
+  line-height: 141px;
+  margin-bottom: 50px;
 }
 
 .text-wrapper {
-  font-size: calc(100vw * 41 / 1938);
+  font-size: 41px;
   font-family: 'Montserrat', sans-serif;
   color: #FFFFFF;
   width: calc(100vw * 1600 / 1938);
   margin: auto;
-  left: 0;
-  right: 0;
-  top: calc(100vh * 625 / 1938);
-  position: absolute;
+  display: block;
 }
 
 .pink {
@@ -207,11 +203,38 @@ export default {
 }
 
 @media (max-width: 1500px) {
-  
+  .title {
+    font-size: 100px;
+    line-height: 100px;
+  }
+
+  .text-wrapper {
+    font-size: 30px;
+  }
 }
 
 @media (max-width: 1000px) {
+  .title {
+    font-size: 70px;
+    line-height: 70px;
+  }
 
+  .text-wrapper {
+    font-size: 21px;
+  }
+}
+
+@media (max-width: 765px) {
+  .title {
+    font-size: 50px;
+    line-height: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .text-wrapper {
+    font-size: 16px;
+  }
 }
 
 
