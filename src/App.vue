@@ -85,6 +85,15 @@
           <p> Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
         </div>    
       </div>
+      <div class="second-section">
+        <img src="../public/img/us/us_personaje_1.png" alt="" class="personaje-1">
+        <img src="../public/img/us/us_personaje_2.png" alt="" class="personaje-2">
+        <img src="../public/img/us/us_personaje_3.png" alt="" class="personaje-3">
+        <img src="../public/img/us/us_mesa.png" alt="" class="mesa">
+        <img src="../public/img/us/us_globo_1.png" alt="" class="globo-1">
+        <img src="../public/img/us/us_globo_2.png" alt="" class="globo-2">
+        <img src="../public/img/us/us_globo_3.png" alt="" class="globo-3">
+      </div>
       
     </q-page-container>
   </q-layout>
@@ -123,6 +132,7 @@ export default {
 
 #appLayout {
   display: none;
+  overflow: hidden;
 }
 
 .q-toolbar {
@@ -145,7 +155,7 @@ export default {
   top: 15px;
 }
 .mainWrapper {
-  background-image: linear-gradient(to bottom, #000000 50%, #9a38ff 100%);
+  background-image: linear-gradient(to bottom, #000000 35%, #9a38ff 100%);
 }
 .footer-img {
   width: 100%;
@@ -173,6 +183,11 @@ export default {
   position: absolute;
   right: 15px;
 }
+
+.pink {
+  color:#9A38FF;
+}
+
 /* End Custom CSS */
 
 .title {
@@ -194,8 +209,59 @@ export default {
   display: block;
 }
 
-.pink {
-  color:#9A38FF;
+.second-section {
+  min-height: calc(100vw * 1935 / 1938);
+  /*min-height: calc(100vh * 1935  / 3293);*/
+  position: relative;
+}
+
+.personaje-1 {
+  width: calc(100vw * 495 / 1938);
+  position: absolute;
+  bottom: calc(100vw * 140 / 1938);;
+  left: calc(100vw * 183 / 1938);
+}
+
+.personaje-2 {
+  width: calc(100vw * 503 / 1938);
+  position: absolute;
+  bottom: calc(100vw * -485 / 1938);
+  left: calc(100vw * 681 / 1938);
+}
+
+.personaje-3 {
+  width: calc(100vw * 573 / 1938);
+  position: absolute;
+  bottom: calc(100vw * -520 / 1938);
+  right: calc(100vw * 56 / 1938);
+}
+
+.globo-1 {
+  width: calc(100vw * 653 / 1938);
+  position: absolute;
+  bottom: calc(100vw * 955 / 1938);;
+  left: calc(100vw * 114 / 1938);
+}
+
+.globo-2 {
+  width: calc(100vw * 548 / 1938);
+  position: absolute;
+  bottom: calc(100vw * 881 / 1938);;
+  left: calc(100vw * 744 / 1938);
+}
+
+.globo-3 {
+  width: calc(100vw * 566 / 1938);
+  position: absolute;
+  bottom: calc(100vw * 904 / 1938);;
+  right: calc(100vw * 56 / 1938);
+}
+
+.mesa {
+  width: calc(100vw * 1789 / 1938);
+  position: absolute;
+  bottom: 0px;
+  left: calc(100vw * 56 / 1938);
 }
 
 @media (max-width: 1800px) {
@@ -230,6 +296,7 @@ export default {
     line-height: 50px;
     padding-left: 15px;
     padding-right: 15px;
+    margin-bottom: 30px;
   }
 
   .text-wrapper {
