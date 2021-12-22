@@ -79,88 +79,28 @@
         <img alt="koikoi_logo" src="../public/img/koikoi_logo_blanco.png" class="logo">
       </div>
       <div class="first-section">
-        <transition name="slide-fade" mode="out-in">
-          <div class="first-section-text-wrapper" v-if="show">
-            <p class="title-section-1">if they don't see you,</p>
-            <p class="title-section-1">it's because you haven't <span class="pink">seen us</span></p>
-            <p class="title-section-2">The creative studio you were looking for</p>
-          </div>  
-        </transition>
+        <div class="title">GET TO KNOW <span class="pink">US</span></div>
+        <div class="text-wrapper">
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat</p>
+          <p> Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+        </div>    
       </div>
-
-      <div class="row">
-        <div class="col-12 col-md-4">
-            <img alt="Quasar logo" src="../public/img/inicio_card_1.png" style="width: 100%; height: 100%" class="test">
-        </div>
-         <div class="col-12 col-md-4">
-            <img alt="Quasar logo" src="../public/img/inicio_card_2.png" style="width: 100%; height: 100%">
-        </div>
-         <div class="col-12 col-md-4">
-            <img alt="Quasar logo" src="../public/img/inicio_card_3.png" style="width: 100%; height: 100%">
-        </div>
+      <div class="second-section">
+        <img src="../public/img/us/us_personaje_1.png" alt="" class="personaje-1">
+        <img src="../public/img/us/us_personaje_2.png" alt="" class="personaje-2">
+        <img src="../public/img/us/us_personaje_3.png" alt="" class="personaje-3">
+        <img src="../public/img/us/us_mesa.png" alt="" class="mesa">
+        <img src="../public/img/us/us_globo_1.png" alt="" class="globo-1">
+        <img src="../public/img/us/us_globo_2.png" alt="" class="globo-2">
+        <img src="../public/img/us/us_globo_3.png" alt="" class="globo-3">
       </div>
-      <div class="third-section">
-        <div class="row row-third-section">
-          <div class="col-12">
-            <div data-aos="fade-up"> <p class="third-section-title">How?</p></div>
-          </div>
-          <div class="col-12 col-sm-4 col-xl-3">
-            <img alt="Quasar logo" src="../public/img/tooltip_1.png" class="third-section-small-img">
-            <p class="third-section-text">What do you need?</p>
-            <p class="third-section-text">- Get to know our</p>
-            <p class="third-section-text">services</p>
-          </div>
-          <div class="col-12 col-sm-4 col-xl-3">
-            <img alt="Quasar logo" src="../public/img/tooltip_2.png" class="third-section-small-img">
-            <p class="third-section-text">Contact us via mail</p>
-            <p class="third-section-text">Whatsapp or paloma</p>
-          </div>
-          <div class="col-12 col-sm-4 col-xl-3">
-            <img alt="Quasar logo" src="../public/img/tooltip_3.png" class="third-section-small-img ">
-            <p class="third-section-text">We get to know you</p>
-            <p class="third-section-text">and what you need</p>
-          </div>
-          <div class="col-12 col-xl-3">
-            <img alt="Quasar logo" src="../public/img/tooltip_4.png" class="third-section-big-img">
-            <p class="third-section-text">WORKING</p>
-            <p class="third-section-text">with you all the process</p>
-            <p class="third-section-text">to rock your brand</p>
-          </div>
-        </div>
-        <div class="row q-mt-xl">
-          <img alt="Quasar logo" src="../public/img/details.png" class="third-section-details-img">
-        </div>
-        <div class="row third-section-circulo-img">
-          <!--<img alt="Quasar logo" src="../public/img/circulo_color.png" class="third-section-circulo-img">-->
-          <div 
-            data-aos-offset="300"
-            data-aos="flip-up" 
-            class="animation-postick-1">
-            <img alt="Quasar logo" src="../public/img/postick_1.png" class="third-section-circulo-img-1">
-          </div>
-          <div 
-            data-aos-offset="300"
-            data-aos="flip-down" 
-            class="animation-postick-2">
-            <img alt="Quasar logo" src="../public/img/postick_2.png" class="third-section-circulo-img-2">
-            <div class="postick-text">
-              <p class="postick-text-1">Contact us</p>
-              <p class="postick-text-2">koikoi@studio.com</p>
-            </div>
-          </div>
-        </div>
-        <div class="footer">
-          <img alt="Quasar logo" src="../public/img/footer.png" class="footer-img">
-        </div>
-      </div>
+      
     </q-page-container>
   </q-layout>
 </template>
 
 <script>
-import simpleParallax from 'simple-parallax-js';
 import { ref } from 'vue'
-//import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'LayoutDefault',
@@ -169,31 +109,13 @@ export default {
        show: false
     }
   },
-  components: {
-   // HelloWorld
-  },
-
   setup () {
     return {
       leftDrawerOpen: ref(false)
     }
   },
   mounted() {
-    //let elemento = document.getElementById("appLayout");
-    //elemento.style.display = "block";
-    //console.log('asd', elemento);
-
     window.addEventListener("load", this.onWindowLoad);
-    /*
-    var DescriptionSectionLeftChair = document.querySelectorAll(".test");
-    new simpleParallax(DescriptionSectionLeftChair, {
-      orientation: "left",
-      scale: 1.4,
-      overflow: true,
-      delay: 0.4,
-      transition: "linear",
-    });
-    */
   },
   methods: {
       onWindowLoad() {
@@ -208,24 +130,9 @@ export default {
 
 <style scoped>
 
-/* Enter and leave animations can use different */
-/* durations and timing functions.              */
-.slide-fade-enter-active {
-  transition: all 0.3s ease-out;
-}
-
-.slide-fade-leave-active {
-  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
-}
-
-.slide-fade-enter-from,
-.slide-fade-leave-to {
-  transform: translateX(20px);
-  opacity: 0;
-}
-
 #appLayout {
   display: none;
+  overflow: hidden;
 }
 
 .q-toolbar {
@@ -236,174 +143,20 @@ export default {
   background-color: unset;
 }
 
-.postick-text {
-  position: absolute;
-  bottom: calc(100vw * 140 / 1920);
-  right: calc(100vw * 80 / 1920);
-}
-
-.postick-text-1 {
-  color: #000000;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 100;
-  margin-bottom: 0px;
-  text-align: center;
-  font-size: calc(100vw * 46 / 1920);
-}
-
-.postick-text-2 {
-  color: #000000;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: bold;
-  text-align: center;
-  font-size: calc(100vw * 46 / 1920);
-}
-
 .header {
   position: relative;
   width: 100vw;
   height: 200px;
 }
 .logo {
-  width: 150px;
+  width: 100px;
   position: absolute;
   left: 15px;
   top: 15px;
 }
 .mainWrapper {
-  background-image: url('../public/img/fondo_color.png');
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image: linear-gradient(to bottom, #000000 35%, #9a38ff 100%);
 }
-.title-section-1 {
-  font-size: 75px;
-  color: white;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: bold;
-  line-height: 75px;
-}
-.title-section-2 {
-  font-size: 32px;
-  color: white;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
-  line-height: 32px;
-}
-.pink {
-  color: #FF7AE2;
-}
-.computador {
-  position: absolute;
-  right: 0px;
-  bottom: 0px;
-}
-.first-section {
-  min-height: 1100px;
-  position: relative;
-  background-image: url('../public/img/computador.png');
-  background-repeat: no-repeat;
-  background-size: 1000px auto;
-  background-position: right -170px top 100px;
-  max-width: 1920px;
-  margin: auto;
-}
-.first-section-text-wrapper {
-  top: 30%;
-  transform: translateY(-50%);
-  position: absolute;
-  left: 117px;
-  margin-left: 20px;
-  margin-right: 20px;
-}
-.third-section {
-  background-image: url('../public/img/fondo_blanco.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.row-third-section {
-  padding-top: 250px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-.third-section-small-img {
-  width: 200px;
-  height: auto;    
-  margin: auto;
-  display: block;
-  margin-bottom: 20px;
-}
-.third-section-big-img {
-  width: 300px;
-  height: auto;    
-  margin: auto;
-  display: block;
-  margin-bottom: 30px;
-}
-.third-section-text {
-  font-size: 41px;
-  text-align: center;
-  line-height: 41px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
-}
-.third-section-details-img {
-  max-width: 450px;
-  margin: auto;
-  width: 100%;
-}
-
-.third-section-title {
-  color:#8450FD;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 800;
-  font-size: 84px;
-  text-align: center;
-  margin-bottom: 40px;
-}
-.third-section-circulo-img {
-  background-image: url('../public/img/circulo_color-min.png');
-  background-repeat: no-repeat;
-  background-size: 90%;
-  min-height: calc(100vw * 1400 / 1920);
-  background-position: right;
-  margin-top: 40px;
-  position: relative;
-}
-
-.third-section-circulo-img-1 {
-  width: calc(100vw * 440 / 1920);
-  height: 100%;
-  /*
-  height: max-content;
-  position: absolute;
-  bottom: calc(100vw * 330 / 1920);
-  right: calc(100vw * 782 / 1920);
-  */
-}
-
-.animation-postick-1 {
-  position: absolute;
-  bottom: calc(100vw * 330 / 1920);
-  right: calc(100vw * 782 / 1920);
-}
-
-.third-section-circulo-img-2 {
-  width: calc(100vw * 622 / 1920);
-  height: 100%;
-  /*
-  height: max-content;
-  position: absolute;
-  bottom: calc(100vw * 90 / 1920);
-  right: calc(100vw * 100 / 1920);
-  */
-}
-
-.animation-postick-2 {
-  position: absolute;
-  bottom: calc(100vw * 90 / 1920);
-  right: calc(100vw * 100 / 1920);
-}
-
 .footer-img {
   width: 100%;
 }
@@ -415,16 +168,6 @@ export default {
 .header {
   display: block;
 }
-
-/*
-.third-section-circulo-img {
-  width: 90%;
-  display: block;
-  margin-left: auto;
-  margin-top: 50px;
-}
-*/
-
 /* Custom Components */
 
 .q-toolbar {
@@ -440,58 +183,126 @@ export default {
   position: absolute;
   right: 15px;
 }
+
+.pink {
+  color:#9A38FF;
+}
+
 /* End Custom CSS */
 
-@media (max-width: 1800px) {
-  .title-section-1 {
-    font-size: 60px;
-    line-height: 60px;
-  }
-  .first-section {
-    background-size: 800px auto;
-    max-width: 1550px;
-    background-position: right -170px top 150px;
-    min-height: 900px;
-  }
-  .first-section-text-wrapper {
-    left: 70px;
-  }
+.title {
+  font-size: 141px;
+  color: white;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  line-height: 141px;
+  margin-bottom: 50px;
+}
 
-  .row-third-section {
-    padding-top: 200px;
-  }
+.text-wrapper {
+  font-size: 41px;
+  font-family: 'Montserrat', sans-serif;
+  color: #FFFFFF;
+  width: calc(100vw * 1600 / 1938);
+  margin: auto;
+  display: block;
+}
+
+.second-section {
+  min-height: calc(100vw * 1935 / 1938);
+  /*min-height: calc(100vh * 1935  / 3293);*/
+  position: relative;
+}
+
+.personaje-1 {
+  width: calc(100vw * 495 / 1938);
+  position: absolute;
+  bottom: calc(100vw * 140 / 1938);;
+  left: calc(100vw * 183 / 1938);
+}
+
+.personaje-2 {
+  width: calc(100vw * 503 / 1938);
+  position: absolute;
+  bottom: calc(100vw * -485 / 1938);
+  left: calc(100vw * 681 / 1938);
+}
+
+.personaje-3 {
+  width: calc(100vw * 573 / 1938);
+  position: absolute;
+  bottom: calc(100vw * -520 / 1938);
+  right: calc(100vw * 56 / 1938);
+}
+
+.globo-1 {
+  width: calc(100vw * 653 / 1938);
+  position: absolute;
+  bottom: calc(100vw * 955 / 1938);;
+  left: calc(100vw * 114 / 1938);
+}
+
+.globo-2 {
+  width: calc(100vw * 548 / 1938);
+  position: absolute;
+  bottom: calc(100vw * 881 / 1938);;
+  left: calc(100vw * 744 / 1938);
+}
+
+.globo-3 {
+  width: calc(100vw * 566 / 1938);
+  position: absolute;
+  bottom: calc(100vw * 904 / 1938);;
+  right: calc(100vw * 56 / 1938);
+}
+
+.mesa {
+  width: calc(100vw * 1789 / 1938);
+  position: absolute;
+  bottom: 0px;
+  left: calc(100vw * 56 / 1938);
+}
+
+@media (max-width: 1800px) {
+
 }
 
 @media (max-width: 1500px) {
-  .third-section-text {
-    font-size: 30px;
-    line-height: 30px;
+  .title {
+    font-size: 100px;
+    line-height: 100px;
   }
 
-  .third-section-details-img {
-    max-width: 300px;
+  .text-wrapper {
+    font-size: 30px;
   }
 }
 
 @media (max-width: 1000px) {
-  .row-third-section {
-    padding-top: 150px;
+  .title {
+    font-size: 70px;
+    line-height: 70px;
   }
 
-  .first-section {
-    background-position: center bottom -165px;
-    min-height: 1000px;
-  }
-
-  .first-section-text-wrapper {
-    max-width: 80%;
-    margin: auto;
-    display: block;
-    left: 0;
-    right: 0;
+  .text-wrapper {
+    font-size: 21px;
   }
 }
 
+@media (max-width: 765px) {
+  .title {
+    font-size: 50px;
+    line-height: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 30px;
+  }
+
+  .text-wrapper {
+    font-size: 16px;
+  }
+}
 
 @media (max-width: 600px) {
 
@@ -502,88 +313,5 @@ export default {
   .header {
     display: none;
   }
-
-  .third-section-title {
-    margin-bottom: 0px;
-  }
-
-  .third-section-big-img {
-    margin-top: 30px;
-  }
-
-  .third-section-small-img {
-    margin-top: 20px;
-  }
-
-  .third-section-title {
-    font-size: 60px;
-  }
-
-  .first-section {
-    background-size: 550px auto;
-  }
-
-  .first-section {
-    background-position: center bottom -100px;
-    min-height: 750px;
-  }
-
-  .title-section-1 {
-    font-size: 45px;
-    line-height: 45px;
-  }
-
-  .title-section-2 {
-    font-size: 20px;
-    line-height: 20px;
-  }
-
-  .third-section-text {
-    font-size: 25px;
-    line-height: 25px;
-    margin-bottom: 0px;
-    line-height: 30px;
-  }
-
-  .third-section-details-img {
-    width: 100%;
-    padding-left: 30px;
-    padding-right: 30px;
-    max-width: 255px;
-  }
-
-  .third-section-circulo-img-2 {
-    width: calc(100vw * 1000 / 1920);
-
-  }
-
-  .animation-postick-2 {
-    position: absolute;
-    bottom: calc(100vw * 250 / 1920);
-    right: calc(100vw * 150 / 1920);
-  }
-
-  .postick-text {
-    bottom: calc(100vw * 250 / 1920);
-    right: calc(100vw * 150 / 1920);
-  }
-
-  .postick-text-1,
-  .postick-text-2 {
-    font-size: calc(100vw * 70 / 1920);
-  }
-
-  .animation-postick-1 {
-    display: none;
-  }
-
-  .third-section-small-img {
-    width: 160px;
-  }
-
-  .third-section-big-img {
-    width: 220px;
-  }
-
 }
 </style>
