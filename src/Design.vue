@@ -82,7 +82,7 @@
         <div class="row">
           <div class="col-12 col-md-5 first-section-col-1">
             <div class="first-section-text-wrapper">
-              <p class="first-section-text-1">WEB</p>
+              <p class="first-section-text-1">DESIGN</p>
               <p class="first-section-text-2">PHRASE HERE</p>
               <p class="first-section-text-3">Algo más por aqui</p>
             </div>
@@ -104,12 +104,12 @@
         </div>
       </div>
       <div class="second-section">
-        <img src="../public/img/web/fondo_blanco-min.png" alt="" class="second-section-fondo-blanco">
-        <img src="../public/img/web/burbuja.png" alt="" class="second-section-burbuja">
+        <img src="../public/img/design/fondo_blanco.png" alt="" class="second-section-fondo-blanco">
+        <img src="../public/img/design/circulo.png" class="second-section-burbuja">
         <p class="second-section-text">CHOOSE WHAT YOU NEED</p>
         <div class="second-section-row-wrapper">
           <div class="row second-section-row">
-            <div class="col-4 relative-position">
+            <div class="col-6 relative-position">
               <div class="second-section-col-wrapper">
                 <button class="second-section-col-button">A</button>
                 <p class="second-section-col-text">Ejemplo cualquiera</p>
@@ -119,23 +119,9 @@
                 <p class="second-section-col-text">Ejemplo cualquiera</p>
               </div>
             </div>
-            <div class="col-4 relative-position">
+            <div class="col-6 relative-position">
               <div class="second-section-col-wrapper">
                  <button class="second-section-col-button">B</button>
-                <p class="second-section-col-text">Ejemplo cualquiera</p>
-                <p class="second-section-col-text">Ejemplo cualquiera</p>
-                <p class="second-section-col-text">Ejemplo cualquiera</p>
-                <p class="second-section-col-text">Ejemplo cualquiera</p>
-                <p class="second-section-col-text">Ejemplo cualquiera</p>
-                <p class="second-section-col-text">Ejemplo cualquiera</p>
-                <p class="second-section-col-text">Ejemplo cualquiera</p>
-              </div>
-            </div>
-            <div class="col-4 relative-position">
-              <div class="second-section-col-wrapper">
-                 <button class="second-section-col-button">C</button>
-                <p class="second-section-col-text">Ejemplo cualquiera</p>
-                <p class="second-section-col-text">Ejemplo cualquiera</p>
                 <p class="second-section-col-text">Ejemplo cualquiera</p>
                 <p class="second-section-col-text">Ejemplo cualquiera</p>
                 <p class="second-section-col-text">Ejemplo cualquiera</p>
@@ -151,9 +137,22 @@
       </div>
 
       <div class="third-section">
-        <p class="third-section-text">EJEMPLOS</p>
-        <div class="third-section-div"></div>
-        <img src="../public/img/web/circulo.png" alt="" class="third-section-circulo">
+        <div class="third-section-carousel">
+          <q-carousel
+              animated
+              v-model="slide"
+              arrows
+              navigation
+              infinite
+              class="third-section-q-carousel"
+            >
+              <q-carousel-slide :name="1" img-src="https://cdn.quasar.dev/img/mountains.jpg" />
+              <q-carousel-slide :name="2" img-src="https://cdn.quasar.dev/img/parallax1.jpg" />
+              <q-carousel-slide :name="3" img-src="https://cdn.quasar.dev/img/parallax2.jpg" />
+              <q-carousel-slide :name="4" img-src="https://cdn.quasar.dev/img/quasar.jpg" />
+            </q-carousel>
+        </div>
+        <p class="third-section-text">EJEMPLOS GRÁFICOS</p>
       </div>
       
     </q-page-container>
@@ -217,7 +216,7 @@ export default {
   top: 15px;
 }
 .mainWrapper {
-  /*background-image: url('../public/img/web/fondo.png');*/
+  /*background-image: url('../public/img/design/fondo.png');*/
   /*background-color: red;*/
   background-color: red;
   background-repeat: no-repeat;
@@ -268,10 +267,10 @@ export default {
 
 .first-section-text-1 {
   color: #FFFFFF;
-  font-size: 217px;
+  font-size: 140px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
-  line-height: 217px;
+  line-height: 140px;
   text-align: center;
 }
 
@@ -305,7 +304,7 @@ export default {
   background-image: url('../public/img/web/fondo_blanco.png');
   background-repeat: no-repeat;
   background-size: cover; */
-  height: calc(100vw *  1583 / 1938);
+  height: calc(100vw *  1510 / 1938);
   position: relative;
 }
 
@@ -316,17 +315,20 @@ export default {
   font-weight: 800;
   line-height: 72px;
   position: absolute;
-  top: calc(100vw *  350 / 1938);
-  left: 111px;
+  top: calc(100vw *  220 / 1938);
+  left: 0px;
+  right: 0px;
+  margin: auto;
+  text-align: center;
 }
 
 .second-section-row-wrapper {
   position: absolute;
   height: 845px;
-  top: calc(100vw *  390 / 1938);
+  top: calc(100vw *  280 / 1938);
   left: 0px;
   right: 0px;
-  width: calc(100vw *  1703 / 1938);
+  width: calc(100vw *  1200 / 1938);
   margin: auto;
 }
 
@@ -371,39 +373,40 @@ export default {
 .second-section-burbuja {
   position: absolute;
   left: 0px;
-  width: calc(100vw *  486 / 1938);
-  top: calc(100vw *  -100 / 1938);
+  width: calc(100vw *  282 / 1938);
+  bottom: 0px;
 }
 
 .third-section {
-  height: calc(100vw *  860 / 1938);
-  padding-bottom: 125px;
-  margin-bottom: 125px;
-  padding-left: 125px;
-  padding-right: 125px;
+  height: calc(100vw *  774 / 1938);
   position: relative;
 }
 
-.third-section-div {
-  background: #000000 0% 0% no-repeat padding-box;
-  opacity: 0.19;
-  width: 100%;
-  height: 100%;
-}
-
 .third-section-text {
-  color: #FFFFFF;
-  font-size: 99px;
+  color: #DDC300;
+  font-size: 72px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
-  line-height: 99px;
+  line-height: 72px;
+  text-align: center;
+  position: absolute;
+  bottom: calc(100vw *  169 / 1938);
+  left: 0px;
+  right: 0px;
 }
 
-.third-section-circulo {
-  width: calc(100vw *  694 / 1938);
+.third-section-carousel {
+  width: calc(100vw *  1053 / 1938);
+  height: calc(100vw *  680 / 1938);
   position: absolute;
-  bottom: calc(100vw *  -250 / 1938);
-  right: calc(100vw *  297 / 1938);
+  left: 0px;
+  right: 0px;
+  margin: auto;
+  bottom: calc(100vw *  335 / 1938);
+}
+
+.third-section-q-carousel {
+  height: 100%;
 }
 
 @media (max-width: 1680px) {
@@ -427,8 +430,8 @@ export default {
 
 @media (max-width: 1500px) {
   .first-section-text-1 {
-    font-size: 154px;
-    line-height: 154px;
+    font-size: 100px;
+    line-height: 100px;
   }
 
   .first-section-text-2 {
@@ -457,8 +460,8 @@ export default {
 @media (max-width: 1200px) {
 
   .first-section-text-1 {
-    font-size: 109px;
-    line-height: 109px;
+    font-size: 70px;
+    line-height: 70px;
   }
 
   .first-section-text-2 {

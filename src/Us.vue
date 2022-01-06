@@ -79,20 +79,81 @@
         <img alt="koikoi_logo" src="../public/img/koikoi_logo_blanco.png" class="logo">
       </div>
       <div class="first-section">
-        <div class="title">GET TO KNOW <span class="pink">US</span></div>
-        <div class="text-wrapper">
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat</p>
-          <p> Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
-        </div>    
+        <div class="row">
+          <div class="col-12 col-md-5 first-section-col-1">
+            <div class="first-section-text-wrapper">
+              <p class="first-section-text-1">WEB</p>
+              <p class="first-section-text-2">PHRASE HERE</p>
+              <p class="first-section-text-3">Algo más por aqui</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-7 first-section-second-col">
+            <q-carousel
+              animated
+              v-model="slide"
+              arrows
+              navigation
+              infinite
+            >
+              <q-carousel-slide :name="1" img-src="https://cdn.quasar.dev/img/mountains.jpg" />
+              <q-carousel-slide :name="2" img-src="https://cdn.quasar.dev/img/parallax1.jpg" />
+              <q-carousel-slide :name="3" img-src="https://cdn.quasar.dev/img/parallax2.jpg" />
+              <q-carousel-slide :name="4" img-src="https://cdn.quasar.dev/img/quasar.jpg" />
+            </q-carousel>
+          </div>
+        </div>
       </div>
       <div class="second-section">
-        <img src="../public/img/us/us_personaje_1.png" alt="" class="personaje-1">
-        <img src="../public/img/us/us_personaje_2.png" alt="" class="personaje-2">
-        <img src="../public/img/us/us_personaje_3.png" alt="" class="personaje-3">
-        <img src="../public/img/us/us_mesa.png" alt="" class="mesa">
-        <img src="../public/img/us/us_globo_1.png" alt="" class="globo-1">
-        <img src="../public/img/us/us_globo_2.png" alt="" class="globo-2">
-        <img src="../public/img/us/us_globo_3.png" alt="" class="globo-3">
+        <img src="../public/img/web/fondo_blanco-min.png" alt="" class="second-section-fondo-blanco">
+        <img src="../public/img/web/burbuja.png" alt="" class="second-section-burbuja">
+        <p class="second-section-text">CHOOSE WHAT YOU NEED</p>
+        <div class="second-section-row-wrapper">
+          <div class="row second-section-row">
+            <div class="col-4 relative-position">
+              <div class="second-section-col-wrapper">
+                <button class="second-section-col-button">A</button>
+                <p class="second-section-col-text">Ejemplo cualquiera</p>
+                <p class="second-section-col-text">Ejemplo cualquiera</p>
+                <p class="second-section-col-text">Ejemplo cualquiera</p>
+                <p class="second-section-col-text">Ejemplo cualquiera</p>
+                <p class="second-section-col-text">Ejemplo cualquiera</p>
+              </div>
+            </div>
+            <div class="col-4 relative-position">
+              <div class="second-section-col-wrapper">
+                 <button class="second-section-col-button">B</button>
+                <p class="second-section-col-text">Ejemplo cualquiera</p>
+                <p class="second-section-col-text">Ejemplo cualquiera</p>
+                <p class="second-section-col-text">Ejemplo cualquiera</p>
+                <p class="second-section-col-text">Ejemplo cualquiera</p>
+                <p class="second-section-col-text">Ejemplo cualquiera</p>
+                <p class="second-section-col-text">Ejemplo cualquiera</p>
+                <p class="second-section-col-text">Ejemplo cualquiera</p>
+              </div>
+            </div>
+            <div class="col-4 relative-position">
+              <div class="second-section-col-wrapper">
+                 <button class="second-section-col-button">C</button>
+                <p class="second-section-col-text">Ejemplo cualquiera</p>
+                <p class="second-section-col-text">Ejemplo cualquiera</p>
+                <p class="second-section-col-text">Ejemplo cualquiera</p>
+                <p class="second-section-col-text">Ejemplo cualquiera</p>
+                <p class="second-section-col-text">Ejemplo cualquiera</p>
+                <p class="second-section-col-text">Ejemplo cualquiera</p>
+                <p class="second-section-col-text">Ejemplo cualquiera</p>
+                <p class="second-section-col-text">Ejemplo cualquiera</p>
+                <p class="second-section-col-text">Ejemplo cualquiera</p>
+              </div>
+            </div>
+          </div>
+        </div>
+       
+      </div>
+
+      <div class="third-section">
+        <p class="third-section-text">EJEMPLOS</p>
+        <div class="third-section-div"></div>
+        <img src="../public/img/web/circulo.png" alt="" class="third-section-circulo">
       </div>
       
     </q-page-container>
@@ -106,12 +167,13 @@ export default {
   name: 'LayoutDefault',
   data() {
     return {
-       show: false
+       show: false,
     }
   },
   setup () {
     return {
-      leftDrawerOpen: ref(false)
+      leftDrawerOpen: ref(false),
+      slide: ref(1)
     }
   },
   mounted() {
@@ -155,7 +217,11 @@ export default {
   top: 15px;
 }
 .mainWrapper {
-  background-image: linear-gradient(to bottom, #000000 35%, #9a38ff 100%);
+  /*background-image: url('../public/img/web/fondo.png');*/
+  /*background-color: red;*/
+  background-color: red;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .footer-img {
   width: 100%;
@@ -190,119 +256,246 @@ export default {
 
 /* End Custom CSS */
 
-.title {
-  font-size: 141px;
-  color: white;
-  text-align: center;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 900;
-  line-height: 141px;
+.first-section {
   margin-bottom: 50px;
 }
 
-.text-wrapper {
-  font-size: 41px;
-  font-family: 'Montserrat', sans-serif;
+.first-section-text-wrapper {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.first-section-text-1 {
   color: #FFFFFF;
-  width: calc(100vw * 1600 / 1938);
-  margin: auto;
-  display: block;
+  font-size: 217px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  line-height: 217px;
+  text-align: center;
+}
+
+.first-section-text-2 {
+  color: #FFFFFF;
+  font-size: 72px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  opacity: 0.61;
+  line-height: 72px;
+  text-align: center;
+}
+
+.first-section-text-3 {
+  color: #FFFFFF;
+  font-size: 37px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  opacity: 0.61;
+  line-height: 37px;
+  text-align: center;
+}
+
+.first-section-second-col {
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 .second-section {
-  min-height: calc(100vw * 1935 / 1938);
-  /*min-height: calc(100vh * 1935  / 3293);*/
+  /*
+  background-image: url('../public/img/web/fondo_blanco.png');
+  background-repeat: no-repeat;
+  background-size: cover; */
+  height: calc(100vw *  1583 / 1938);
   position: relative;
 }
 
-.personaje-1 {
-  width: calc(100vw * 495 / 1938);
+.second-section-text {
+  color: #732DC3;
+  font-size: 72px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  line-height: 72px;
   position: absolute;
-  bottom: calc(100vw * 140 / 1938);;
-  left: calc(100vw * 183 / 1938);
+  top: calc(100vw *  350 / 1938);
+  left: 111px;
 }
 
-.personaje-2 {
-  width: calc(100vw * 503 / 1938);
+.second-section-row-wrapper {
   position: absolute;
-  bottom: calc(100vw * -485 / 1938);
-  left: calc(100vw * 681 / 1938);
+  height: 845px;
+  top: calc(100vw *  390 / 1938);
+  left: 0px;
+  right: 0px;
+  width: calc(100vw *  1703 / 1938);
+  margin: auto;
 }
 
-.personaje-3 {
-  width: calc(100vw * 573 / 1938);
-  position: absolute;
-  bottom: calc(100vw * -520 / 1938);
-  right: calc(100vw * 56 / 1938);
+.second-section-col-text {
+  font-size: 41px;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.globo-1 {
-  width: calc(100vw * 653 / 1938);
-  position: absolute;
-  bottom: calc(100vw * 955 / 1938);;
-  left: calc(100vw * 114 / 1938);
-}
-
-.globo-2 {
-  width: calc(100vw * 548 / 1938);
-  position: absolute;
-  bottom: calc(100vw * 881 / 1938);;
-  left: calc(100vw * 744 / 1938);
-}
-
-.globo-3 {
-  width: calc(100vw * 566 / 1938);
-  position: absolute;
-  bottom: calc(100vw * 904 / 1938);;
-  right: calc(100vw * 56 / 1938);
-}
-
-.mesa {
-  width: calc(100vw * 1789 / 1938);
+.second-section-col-wrapper {
   position: absolute;
   bottom: 0px;
-  left: calc(100vw * 56 / 1938);
+  left: 0px;
+  right: 0px;
+  margin: auto;
+  width: fit-content;
 }
 
-@media (max-width: 1800px) {
+.second-section-row {
+  height: inherit;
+}
 
+.second-section-col-button {
+  background-color: black;
+  color: white;
+  width: calc(100vw *  374 / 1938);
+  height: calc(100vw *  77.5 / 1938);
+  margin: auto;
+  margin-bottom: 70px;
+  border-radius: 50px;
+  line-height: 1;
+  font-size: 62px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  display: block;
+}
+
+.second-section-fondo-blanco {
+  width: 100%;
+  max-height: 100%;
+}
+
+.second-section-burbuja {
+  position: absolute;
+  left: 0px;
+  width: calc(100vw *  486 / 1938);
+  top: calc(100vw *  -100 / 1938);
+}
+
+.third-section {
+  height: calc(100vw *  860 / 1938);
+  padding-bottom: 125px;
+  margin-bottom: 125px;
+  padding-left: 125px;
+  padding-right: 125px;
+  position: relative;
+}
+
+.third-section-div {
+  background: #000000 0% 0% no-repeat padding-box;
+  opacity: 0.19;
+  width: 100%;
+  height: 100%;
+}
+
+.third-section-text {
+  color: #FFFFFF;
+  font-size: 99px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  line-height: 99px;
+}
+
+.third-section-circulo {
+  width: calc(100vw *  694 / 1938);
+  position: absolute;
+  bottom: calc(100vw *  -250 / 1938);
+  right: calc(100vw *  297 / 1938);
+}
+
+@media (max-width: 1680px) {
+  .second-section-row-wrapper {
+    height: 700px;
+  }
+
+  .second-section-col-text {
+    font-size: 32px;
+  }
+
+  .second-section-text {
+    font-size: 60px;
+  }
+
+  .second-section-col-button {
+    font-size: 45px;
+    margin-bottom: 40px
+  }
 }
 
 @media (max-width: 1500px) {
-  .title {
-    font-size: 100px;
-    line-height: 100px;
+  .first-section-text-1 {
+    font-size: 154px;
+    line-height: 154px;
   }
 
-  .text-wrapper {
-    font-size: 30px;
+  .first-section-text-2 {
+    font-size: 51px;
+    line-height: 51px;
+  }
+
+   .first-section-text-3 {
+    font-size: 26px;
+    line-height: 26px;
+  }
+
+  .second-section-row-wrapper {
+    height: 610px;
+  }
+
+  .second-section-col-text {
+    font-size: 28px;
+  }
+
+  .second-section-text {
+    font-size: 48px;
   }
 }
 
-@media (max-width: 1000px) {
-  .title {
-    font-size: 70px;
-    line-height: 70px;
+@media (max-width: 1200px) {
+
+  .first-section-text-1 {
+    font-size: 109px;
+    line-height: 109px;
   }
 
-  .text-wrapper {
-    font-size: 21px;
+  .first-section-text-2 {
+    font-size: 36px;
+    line-height: 36px;
+  }
+
+   .first-section-text-3 {
+    font-size: 18px;
+    line-height: 18px;
   }
 }
+
+@media (max-width: 1020px) {
+  .first-section-col-1 {
+    margin-bottom: 25px;
+  }
+}
+
 
 @media (max-width: 765px) {
-  .title {
-    font-size: 50px;
-    line-height: 50px;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-bottom: 30px;
+
+  .first-section-text-1 {
+    font-size: 78px;
+    line-height: 78px;
+    padding-top: 25px;
   }
 
-  .text-wrapper {
-    font-size: 16px;
+  .first-section-text-2 {
+    font-size: 26px;
+    line-height: 26px;
   }
-}
+
+   .first-section-text-3 {
+    font-size: 14px;
+    line-height: 14px;
+  }}
 
 @media (max-width: 600px) {
 
