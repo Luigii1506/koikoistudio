@@ -108,6 +108,39 @@
         <img src="../public/img/design/circulo.png" class="second-section-burbuja">
         <p class="second-section-text">CHOOSE WHAT YOU NEED</p>
         <div class="second-section-row-wrapper">
+          <swiper class="mySwiper">
+            <swiper-slide> 
+              <button class="second-section-col-button">A</button>
+                <p class="second-section-col-text">Ejemplo cualquiera</p>
+                <p class="second-section-col-text">Ejemplo cualquiera</p>
+                <p class="second-section-col-text">Ejemplo cualquiera</p>
+                <p class="second-section-col-text">Ejemplo cualquiera</p>
+                <p class="second-section-col-text">Ejemplo cualquiera</p>
+            </swiper-slide>
+             <swiper-slide> 
+               <button class="second-section-col-button">B</button>
+                <p class="second-section-col-text">Ejemplo cualquiera</p>
+                <p class="second-section-col-text">Ejemplo cualquiera</p>
+                <p class="second-section-col-text">Ejemplo cualquiera</p>
+                <p class="second-section-col-text">Ejemplo cualquiera</p>
+                <p class="second-section-col-text">Ejemplo cualquiera</p>
+                <p class="second-section-col-text">Ejemplo cualquiera</p>
+                <p class="second-section-col-text">Ejemplo cualquiera</p>
+              </swiper-slide>
+             <swiper-slide> 
+               <button class="second-section-col-button">C</button>
+                <p class="second-section-col-text">Ejemplo cualquiera</p>
+                <p class="second-section-col-text">Ejemplo cualquiera</p>
+                <p class="second-section-col-text">Ejemplo cualquiera</p>
+                <p class="second-section-col-text">Ejemplo cualquiera</p>
+                <p class="second-section-col-text">Ejemplo cualquiera</p>
+                <p class="second-section-col-text">Ejemplo cualquiera</p>
+                <p class="second-section-col-text">Ejemplo cualquiera</p>
+                <p class="second-section-col-text">Ejemplo cualquiera</p>
+                <p class="second-section-col-text">Ejemplo cualquiera</p>
+            </swiper-slide>
+          </swiper>
+          <!--
           <div class="row second-section-row">
             <div class="col-6 relative-position">
               <div class="second-section-col-wrapper">
@@ -197,6 +230,10 @@ export default {
       SwiperSlide,
     },
   name: 'LayoutDefault',
+   components: {
+      Swiper,
+      SwiperSlide,
+    },
   data() {
     return {
        show: false,
